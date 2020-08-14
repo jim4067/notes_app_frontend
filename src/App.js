@@ -67,8 +67,8 @@ const App = (props) => {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-            const user = await loginService.login({
-                username, password,
+            const user = await loginService.login({                     //local user is used in setUser but not 
+                username, password,                                     //global user
             });
 
             setUser(user);
@@ -80,6 +80,18 @@ const App = (props) => {
                 setErrorMessage(null);
             }, 5000);
         }
+    }
+
+    const loginForm = () => {
+        <form onSubmit={handleLogin} >
+            <div>
+                username <input type='text' value={username} name="Username" onChange={({ target }) => setUsername(target.username)} />
+            </div>
+            <div>
+                password <input type='password' value={password} name="Password" onChange={({ target }) => setPassword(target.password)} />
+            </div>
+            <button type='submit'>login</button>
+        </form>
     }
 
     return (
@@ -122,10 +134,10 @@ const App = (props) => {
             <Footer />
         </div>
     );
-};
+    };
 
 
 
 
 
-export default App;
+    export default App;
