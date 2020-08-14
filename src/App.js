@@ -107,15 +107,8 @@ const App = (props) => {
 
             <Notification message={errorMessage} />
 
-            <form onSubmit={handleLogin}>
-                <div>
-                    username <input type='text' value={username} name="Username" onChange={({ target }) => setUsername(target.value)} />
-                </div>
-                <div>
-                    password <input type='Password' value={username} name="Password" onChange={({ target }) => setPassword(target.value)} />
-                </div>
-                <button type='submit'> login</button>
-            </form>
+            {user === null && loginForm()}
+            {user !== null && noteForm()}
 
             <div>
                 <button onClick={() => setShowAll(!showAll)}>
@@ -124,19 +117,13 @@ const App = (props) => {
             </div>
 
             <ul>
-
-                {notesToShow.map(note =>
-                    <Note key={note.id}
+                {notesToShow.map((note, i) =>
+                    <Note key= {i}
                         note={note}
                         toggleImportance={() => toggleImportanceOf(note.id)}
                     />
                 )}
             </ul>
-
-            <form onSubmit={addNote} >
-                <input value={newNote} onChange={handleNoteChange} /> {" "}
-                <button type="submit" >save</button>
-            </form>
 
             <Footer />
         </div>
