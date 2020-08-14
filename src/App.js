@@ -20,7 +20,16 @@ const App = (props) => {
             .then(inititalNotes => {
                 setNotes(inititalNotes.data);
             });
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser');
+        if(loggedUserJSON){
+            const user = JSON.parse(loggedUserJSON);
+            setUser(user);
+            noteService.setToken(user.token);
+        }
+    }, []);
 
     const notesToShow = showAll
         ? notes
