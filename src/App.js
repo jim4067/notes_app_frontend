@@ -94,6 +94,13 @@ const App = (props) => {
         </form>
     }
 
+    const noteForm = () => {
+        <form onSubmit={addNote}>
+            <input value={newNote} onChange={handleNoteChange} />
+            <button type='submit'>save</button>
+        </form>
+    }
+
     return (
         <div>
             <h1>Notes</h1>
@@ -134,10 +141,10 @@ const App = (props) => {
             <Footer />
         </div>
     );
-    };
+};
 
 
 
 
 
-    export default App;
+export default App;
