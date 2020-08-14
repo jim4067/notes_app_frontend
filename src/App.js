@@ -82,6 +82,8 @@ const App = (props) => {
         }
     }
 
+    //one solution to remove the errors and warnins is to set the login and
+    //noteform as components.
     const loginForm = () => {
         <form onSubmit={handleLogin} >
             <div>
