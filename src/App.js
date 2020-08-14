@@ -116,8 +116,8 @@ const App = (props) => {
 
             <Notification message={errorMessage} />
 
-            {user === null
-                ?
+            {user === null                          //why is this not returning true
+                ?                                   //find a way to conditionally render the components
                 <LoginForm />
                 :
                 <div>
