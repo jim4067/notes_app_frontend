@@ -25,3 +25,6 @@ const update = (id, newObject) => {
 } 
 
 export default {getAll, create, update, setToken}
+
+//the module  contains the private varible token which can be updated/set with 
+//the set token function which is exported with the module CREAT
