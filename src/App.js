@@ -71,13 +71,24 @@ const App = (props) => {
         <div>
             <h1>Notes</h1>
 
-            <Notification message={errorMessage} /> 
-            
+            <Notification message={errorMessage} />
+
+            <form onSubmit={handleLogin}>
+                <div>
+                    username <input type='text' value={username} name="Username" onChange={({ target }) => setUsername(target.value)} />
+                </div>
+                <div>
+                    password <input type='Password' value={username} name="Password" onChange={({ target }) => setPassword(target.value)} />
+                </div>
+                <button type='submit'> login</button>
+            </form>
+
             <div>
                 <button onClick={() => setShowAll(!showAll)}>
                     show{showAll ? "important" : "all"}
                 </button>
             </div>
+
             <ul>
 
                 {notesToShow.map(note =>
@@ -87,10 +98,12 @@ const App = (props) => {
                     />
                 )}
             </ul>
+
             <form onSubmit={addNote} >
                 <input value={newNote} onChange={handleNoteChange} /> {" "}
                 <button type="submit" >save</button>
             </form>
+
             <Footer />
         </div>
     );
