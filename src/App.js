@@ -107,8 +107,12 @@ const App = (props) => {
 
             <Notification message={errorMessage} />
 
-            {user === null && loginForm()}
-            {user !== null && noteForm()}
+            {user === null 
+            ?
+            loginForm()
+            :
+            noteForm()
+            }
 
             <div>
                 <button onClick={() => setShowAll(!showAll)}>
@@ -118,7 +122,7 @@ const App = (props) => {
 
             <ul>
                 {notesToShow.map((note, i) =>
-                    <Note key= {i}
+                    <Note key={i}
                         note={note}
                         toggleImportance={() => toggleImportanceOf(note.id)}
                     />
