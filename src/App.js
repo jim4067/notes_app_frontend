@@ -85,8 +85,10 @@ const App = (props) => {
 
     //one solution to remove the errors and warnins is to set the login and
     //noteform as components.
-    const loginForm = () => {
-        <form onSubmit={handleLogin} >
+    const LoginForm = () => {
+
+        return(
+            <form onSubmit={handleLogin} >
             <div>
                 username <input type='text' value={username} name="Username" onChange={({ target }) => setUsername(target.username)} />
             </div>
@@ -95,13 +97,17 @@ const App = (props) => {
             </div>
             <button type='submit'>login</button>
         </form>
+        )
     }
 
-    const noteForm = () => {
-        <form onSubmit={addNote}>
+    const NoteForm = () => {
+        
+        return(
+            <form onSubmit={addNote}>
             <input value={newNote} onChange={handleNoteChange} />
             <button type='submit'>save</button>
         </form>
+        )
     }
 
     return (
@@ -112,11 +118,11 @@ const App = (props) => {
 
             {user === null
                 ?
-                loginForm()
+                <LoginForm />
                 :
                 <div>
                     <p>{user.name} logged-in</p>
-                    {noteForm()}
+                    <NoteForm />
                 </div>
             }
 
