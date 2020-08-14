@@ -41,7 +41,6 @@ const App = (props) => {
     };
 
 
-
     const handleNoteChange = (event) => {
         console.log(event.target.value);
         setNewNote(event.target.value);
@@ -63,11 +62,17 @@ const App = (props) => {
             })
     }
 
+    const handleLogin = (event) => {
+        event.preventDefault();
+        console.log("logging in with ", username, password);
+    }
 
     return (
         <div>
             <h1>Notes</h1>
+
             <Notification message={errorMessage} /> 
+            
             <div>
                 <button onClick={() => setShowAll(!showAll)}>
                     show{showAll ? "important" : "all"}
