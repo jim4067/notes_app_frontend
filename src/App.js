@@ -8,13 +8,15 @@ const App = (props) => {
     const [notes, setNotes] = useState([]);
     const [newNote, setNewNote] = useState("");
     const [showAll, setShowAll] = useState(true);
-    const [errorMessage, setErrorMessage] = useState(null)
+    const [errorMessage, setErrorMessage] = useState(null);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     useEffect(() => {
         noteService
             .getAll()
-            .then(response => {
-                setNotes(response.data);
+            .then(inititalNotes => {
+                setNotes(inititalNotes.data);
             });
     }, [])
 
