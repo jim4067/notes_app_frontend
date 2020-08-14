@@ -107,11 +107,14 @@ const App = (props) => {
 
             <Notification message={errorMessage} />
 
-            {user === null 
-            ?
-            loginForm()
-            :
-            noteForm()
+            {user === null
+                ?
+                loginForm()
+                :
+                <div>
+                    <p>{user.name} logged-in</p>
+                    {noteForm()}
+                </div>
             }
 
             <div>
