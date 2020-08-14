@@ -72,7 +72,7 @@ const App = (props) => {
             });
 
             window.localStorage.setItem(
-                "loggedNoteAppUser" , JSON.stringify(user)
+                "loggedNoteAppUser" , JSON.stringify(user)            //the user can be viewed in the local storage
             );
             noteService.setToken(user.token);
             setUser(user);
