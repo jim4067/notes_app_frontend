@@ -82,6 +82,18 @@ const App = (props) => {
             }, 5000)
         }
     }
+    
+    const NoteForm = () => {
+
+        return(
+            <div>
+                <form onSubmit={addNote}>
+                    <input value={newNote} onChange={handleNoteChange} />
+                    <button type='submit'>save</button>
+                </form>
+            </div>
+        );
+    }
 
     const LoginForm = () => {
 
@@ -112,13 +124,6 @@ const App = (props) => {
             <h1>Notes</h1>
 
             <Notification message={errorMessage} />
-
-            <div>
-                <form onSubmit={addNote}>
-                    <input value={newNote} onChange={handleNoteChange} />
-                    <button type='submit'>save</button>
-                </form>
-            </div>
 
             <div>
                 <button onClick={() => setShowAll(!showAll)}>
