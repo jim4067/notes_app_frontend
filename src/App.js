@@ -9,6 +9,8 @@ const App = (props) => {
     const [newNote, setNewNote] = useState("");
     const [showAll, setShowAll] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     useEffect(() => {
         noteService
@@ -60,6 +62,10 @@ const App = (props) => {
             })
     }
 
+    const handleLogin = (event) => {
+        event.preventDefault();
+        console.log("logging in with", username, password);
+    }
 
     return (
         <div>
