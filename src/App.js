@@ -72,6 +72,7 @@ const App = (props) => {
                 { username, password }
             )
 
+            noteService.setToken(user.token);
             setUser(user);
             setUsername("");
             setPassword("");
