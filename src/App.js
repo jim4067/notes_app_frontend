@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Note from './components/Note';
 import Notification from './components/Notification'
 import Footer from './components/Footer';
-import loginService from './services/login';
 import noteService from './services/notes';
 
 const App = (props) => {
@@ -10,9 +9,6 @@ const App = (props) => {
     const [newNote, setNewNote] = useState("");
     const [showAll, setShowAll] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [user, setUser] = useState("");
 
     useEffect(() => {
         noteService
@@ -20,15 +16,6 @@ const App = (props) => {
             .then(inititalNotes => {
                 setNotes(inititalNotes.data);
             });
-    }, []);
-
-    useEffect(() => {
-        const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser');
-        if(loggedUserJSON){
-            const user = JSON.parse(loggedUserJSON);
-            setUser(user);
-            noteService.setToken(user.token);
-        }
     }, []);
 
     const notesToShow = showAll
@@ -73,54 +60,6 @@ const App = (props) => {
             })
     }
 
-    const handleLogin = async (event) => {
-        event.preventDefault();
-        try {
-            const user = await loginService.login({                     //local user is used in setUser but not 
-                username, password,                                     //global user
-            });
-
-            window.localStorage.setItem(
-                "loggedNoteAppUser" , JSON.stringify(user)            //the user can be viewed in the local storage
-            );
-            noteService.setToken(user.token);
-            setUser(user);
-            setUsername("");
-            setPassword("");
-        } catch (exception) {
-            setErrorMessage("wrong credentials");
-            setTimeout(() => {
-                setErrorMessage(null);
-            }, 5000);
-        }
-    }
-
-    //one solution to remove the errors and warnins is to set the login and
-    //noteform as components.
-    const LoginForm = () => {
-
-        return(
-            <form onSubmit={handleLogin} >
-            <div>
-                username <input type='text' value={username} name="Username" onChange={({ target }) => setUsername(target.username)} />
-            </div>
-            <div>
-                password <input type='password' value={password} name="Password" onChange={({ target }) => setPassword(target.password)} />
-            </div>
-            <button type='submit'>login</button>
-        </form>
-        )
-    }
-
-    const NoteForm = () => {
-        
-        return(
-            <form onSubmit={addNote}>
-            <input value={newNote} onChange={handleNoteChange} />
-            <button type='submit'>save</button>
-        </form>
-        )
-    }
 
     return (
         <div>
@@ -128,15 +67,13 @@ const App = (props) => {
 
             <Notification message={errorMessage} />
 
-            {user === null                          //why is this not returning true
-                ?                                   //find a way to conditionally render the components
-                <LoginForm />
-                :
-                <div>
-                    <p>{user.name} logged-in</p>
-                    <NoteForm />
-                </div>
-            }
+          
+            <div>
+                <form onSubmit={addNote}>
+                    <input value={newNote} onChange={handleNoteChange} />
+                    <button type='submit'>save</button>
+                </form>
+            </div>
 
             <div>
                 <button onClick={() => setShowAll(!showAll)}>
