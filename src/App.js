@@ -82,10 +82,10 @@ const App = (props) => {
             }, 5000)
         }
     }
-    
+
     const NoteForm = () => {
 
-        return(
+        return (
             <div>
                 <form onSubmit={addNote}>
                     <input value={newNote} onChange={handleNoteChange} />
@@ -124,6 +124,13 @@ const App = (props) => {
             <h1>Notes</h1>
 
             <Notification message={errorMessage} />
+
+            {user === null
+                ?
+                <LoginForm />
+                :
+                <NoteForm />
+            }
 
             <div>
                 <button onClick={() => setShowAll(!showAll)}>
