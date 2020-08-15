@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Note from './components/Note';
 import Notification from './components/Notification'
 import Footer from './components/Footer';
+import loginService from './services/login';
 import noteService from './services/notes';
 
 const App = (props) => {
@@ -9,8 +10,9 @@ const App = (props) => {
     const [newNote, setNewNote] = useState("");
     const [showAll, setShowAll] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [user, setUser] = useState("");
 
     useEffect(() => {
         noteService
@@ -62,9 +64,23 @@ const App = (props) => {
             })
     }
 
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
         console.log("logging in with", username, password);
+        try {
+            const user = await loginService.login(
+                { username, password }
+            )
+
+            setUser(user);
+            setUsername("");
+            setPassword("");
+        } catch (exception) {
+            setErrorMessage("wrong credentials");
+            setTimeout(() => {
+                setErrorMessage(null);
+            }, 5000)
+        }
     }
 
     return (
@@ -75,10 +91,18 @@ const App = (props) => {
 
             <form onSubmit={handleLogin} >
                 <div>
-                    username <input name='username' onChange={({ target }) => setUsername(target.username)} type='name' value={password} />
+                    username <input
+                        name='username'
+                        onChange={(event) => setUsername(event.target.value)}
+                        type='name'
+                        value={username} />
                 </div>
                 <div>
-                    password <input name='password' onChange={({ target }) => target.password} type='password' value={password} />
+                    password <input
+                        name='password'
+                        onChange={(event) => setPassword(event.target.value)}
+                        type='password'
+                        value={password} />
                 </div>
                 <button type='submit'>login</button>
             </form>
