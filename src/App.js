@@ -12,7 +12,7 @@ const App = (props) => {
     const [errorMessage, setErrorMessage] = useState(null);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [user, setUser] = useState("");
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         noteService
@@ -83,12 +83,9 @@ const App = (props) => {
         }
     }
 
-    return (
-        <div>
-            <h1>Notes</h1>
+    const LoginForm = () => {
 
-            <Notification message={errorMessage} />
-
+        return (
             <form onSubmit={handleLogin} >
                 <div>
                     username <input
@@ -106,6 +103,15 @@ const App = (props) => {
                 </div>
                 <button type='submit'>login</button>
             </form>
+
+        );
+    }
+
+    return (
+        <div>
+            <h1>Notes</h1>
+
+            <Notification message={errorMessage} />
 
             <div>
                 <form onSubmit={addNote}>
