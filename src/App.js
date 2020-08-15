@@ -22,6 +22,15 @@ const App = (props) => {
             });
     }, []);
 
+    useEffect(() => {
+        const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser');
+        if(loggedUserJSON){
+            const user = JSON.parse(loggedUserJSON);
+            setUser(user);
+            noteService.setToken(user.token);
+        }
+    }, []);
+
     const notesToShow = showAll
         ? notes
         : notes.filter(note => note.important === true)
