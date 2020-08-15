@@ -73,7 +73,16 @@ const App = (props) => {
 
             <Notification message={errorMessage} />
 
-          
+            <form onSubmit={handleLogin} >
+                <div>
+                    username <input name='username' onChange={({ target }) => setUsername(target.username)} type='name' value={password} />
+                </div>
+                <div>
+                    password <input name='password' onChange={({ target }) => target.password} type='password' value={password} />
+                </div>
+                <button type='submit'>login</button>
+            </form>
+
             <div>
                 <form onSubmit={addNote}>
                     <input value={newNote} onChange={handleNoteChange} />
