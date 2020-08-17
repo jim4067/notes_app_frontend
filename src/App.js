@@ -35,7 +35,7 @@ const App = (props) => {
         ? notes
         : notes.filter(note => note.important === true)
 
-    const addNote = (event) => {
+    const addNote = async (event) => {
         event.preventDefault();
         const noteobject = {
             content: newNote,
@@ -43,12 +43,17 @@ const App = (props) => {
             important: Math.random() < 0.5,
         };
 
+        const response = await noteService.create(noteobject);
+        setNotes(notes.concat(response.data));
+        setNewNote("");
+        /* 
         noteService
             .create(noteobject)
             .then(response => {
                 setNotes(notes.concat(response.data));
                 setNewNote("");
             })
+        */
     };
 
 
