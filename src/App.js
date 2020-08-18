@@ -26,8 +26,9 @@ const App = (props) => {
             </Togglable>
         );
     }
-    
+
     useEffect(() => {
+        noteFormRef.current.toggleVisibility();
         noteService
             .getAll()
             .then(inititalNotes => {
