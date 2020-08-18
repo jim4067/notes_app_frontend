@@ -28,7 +28,6 @@ const App = (props) => {
     }
 
     useEffect(() => {
-        noteFormRef.current.toggleVisibility();
         noteService
             .getAll()
             .then(inititalNotes => {
@@ -50,6 +49,8 @@ const App = (props) => {
         : notes.filter(note => note.important === true)
 
     const addNote = async (noteObject) => {
+        noteFormRef.current.toggleVisibility();
+
         const response = await noteService.create(noteObject);
         console.log("the response data in addNote is", response)
         setNotes(notes.concat(response));
