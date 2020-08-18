@@ -18,7 +18,7 @@ const App = (props) => {
         noteService
             .getAll()
             .then(inititalNotes => {
-                setNotes(inititalNotes.data);
+                setNotes(inititalNotes)
             });
     }, []);
 
@@ -44,7 +44,8 @@ const App = (props) => {
         };
 
         const response = await noteService.create(noteobject);
-        setNotes(notes.concat(response.data));
+        console.log("the response data", response)
+        setNotes(notes.concat(response));
         setNewNote("");
         /* 
         noteService
