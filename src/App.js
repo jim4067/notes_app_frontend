@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LoginForm from './components/LoginForm';
 import Note from './components/Note';
+import NoteForm from './components/NoteForm';
 import Notification from './components/Notification';
 import Togglable from './components/Togglable';
 import Footer from './components/Footer';
@@ -131,7 +132,7 @@ const App = (props) => {
 
                 <Notification message={errorMessage} />
 
-                <NoteForm />
+                <NoteForm addNote={addNote} newNote={newNote} handleNoteChange={handleNoteChange} />
 
                 <div>
                     <button onClick={() => setShowAll(!showAll)}>
