@@ -106,19 +106,6 @@ const App = (props) => {
         }
     }
 
-    const NoteForm = () => {
-
-        return (
-            <div>
-                <form onSubmit={addNote}>
-                    <input value={newNote} onChange={handleNoteChange} />
-                    <button type='submit'>save</button>
-                </form>
-            </div>
-        );
-    }
-
-
     if (user === null) {
         return (
             <div>
