@@ -23,3 +23,5 @@ const LoginForm = ({handleLogin, username, handleUsernameChange, password, handl
 
     );
 }
+
+export default LoginForm;
