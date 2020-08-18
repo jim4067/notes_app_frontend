@@ -37,18 +37,10 @@ const App = (props) => {
         ? notes
         : notes.filter(note => note.important === true)
 
-    const addNote = async (event) => {
-        event.preventDefault();
-        const noteobject = {
-            content: newNote,
-            date: new Date().toISOString(),
-            important: Math.random() < 0.5,
-        };
-
-        const response = await noteService.create(noteobject);
+    const addNote = async (noteObject) => {
+        const response = await noteService.create(noteObject);
         console.log("the response data in addNote is", response)
         setNotes(notes.concat(response));
-        setNewNote("");
 
         /* 
         noteService
