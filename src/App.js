@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import LoginForm from './components/LoginForm';
 import Note from './components/Note';
 import Notification from './components/Notification'
 import Footer from './components/Footer';
@@ -44,9 +45,10 @@ const App = (props) => {
         };
 
         const response = await noteService.create(noteobject);
-        console.log("the response data", response)
+        console.log("the response data in addNote is", response)
         setNotes(notes.concat(response));
         setNewNote("");
+
         /* 
         noteService
             .create(noteobject)
@@ -112,30 +114,6 @@ const App = (props) => {
                     <button type='submit'>save</button>
                 </form>
             </div>
-        );
-    }
-
-    const LoginForm = () => {
-
-        return (
-            <form onSubmit={handleLogin} >
-                <div>
-                    username <input
-                        name='username'
-                        onChange={(event) => setUsername(event.target.value)}
-                        type='name'
-                        value={username} />
-                </div>
-                <div>
-                    password <input
-                        name='password'
-                        onChange={(event) => setPassword(event.target.value)}
-                        type='password'
-                        value={password} />
-                </div>
-                <button type='submit'>login</button>
-            </form>
-
         );
     }
 
