@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const NoteForm = ({addNote, newNote, handleNoteChange}) => {
+    const [newNote, setNewNote] = useState("");
 
     return (
         <div>
