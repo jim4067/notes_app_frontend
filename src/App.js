@@ -44,10 +44,9 @@ const App = (props) => {
 
         /* 
         noteService
-            .create(noteobject)
+            .create(noteObject)
             .then(response => {
-                setNotes(notes.concat(response.data));
-                setNewNote("");
+                setNotes(notes.concat(response.));
             })
         */
     };
