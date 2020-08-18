@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import LoginForm from './components/LoginForm';
 import Note from './components/Note';
-import Notification from './components/Notification'
+import Notification from './components/Notification';
+import Togglable from './components/Togglable';
 import Footer from './components/Footer';
 import loginService from './services/login';
 import noteService from './services/notes';
@@ -14,7 +15,6 @@ const App = (props) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [user, setUser] = useState(null);
-    const [loginVisible, setLoginVisble] = useState(false);
 
     useEffect(() => {
         noteService
@@ -118,19 +118,13 @@ const App = (props) => {
         );
     }
 
-    const hideWhenVisible = { display: loginVisible ? "none" : "" }
-    const showWhenVisible = { display: loginVisible ? "" : "none" }
 
     if (user === null) {
         return (
             <div>
                 <Notification message={errorMessage} />
 
-                <div style={hideWhenVisible} >
-                    <button onClick={() => setLoginVisble(true)} >log in</button>
-                </div>
-
-                <div style={showWhenVisible}>
+                <Togglable>
                     <LoginForm
                         handleLogin={handleLogin}
                         username={username}
@@ -138,8 +132,7 @@ const App = (props) => {
                         password={password}
                         handlePasswordChange={({ target }) => setPassword(target.value)}
                     />
-                </div>
-                <button onClick={() => setLoginVisble(false)}>cancel</button>
+                </Togglable>
             </div>
         );
     }
