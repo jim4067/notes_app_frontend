@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import LoginForm from './components/LoginForm';
 import Note from './components/Note';
 import NoteForm from './components/NoteForm';
