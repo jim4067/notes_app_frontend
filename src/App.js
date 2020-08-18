@@ -132,7 +132,9 @@ const App = (props) => {
 
                 <Notification message={errorMessage} />
 
-                <NoteForm addNote={addNote} newNote={newNote} handleNoteChange={handleNoteChange} />
+                <Togglable buttonLabel="a new note">
+                    <NoteForm addNote={addNote} newNote={newNote} handleNoteChange={handleNoteChange} />
+                </Togglable>
 
                 <div>
                     <button onClick={() => setShowAll(!showAll)}>
