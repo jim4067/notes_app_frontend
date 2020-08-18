@@ -124,7 +124,7 @@ const App = (props) => {
             <div>
                 <Notification message={errorMessage} />
 
-                <Togglable>
+                <Togglable buttonLabel="login">
                     <LoginForm
                         handleLogin={handleLogin}
                         username={username}
