@@ -14,6 +14,7 @@ const App = (props) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [user, setUser] = useState(null);
+    const [loginVisible, setLoginVisble] = useState(false);
 
     useEffect(() => {
         noteService
