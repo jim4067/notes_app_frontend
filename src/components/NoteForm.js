@@ -1,4 +1,4 @@
-import React from 'reeact';
+import React from 'react';
 
 
 const NoteForm = ({addNote, newNote, handleNoteChange}) => {
