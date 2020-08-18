@@ -26,7 +26,7 @@ const App = (props) => {
 
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser');
-        if(loggedUserJSON){
+        if (loggedUserJSON) {
             const user = JSON.parse(loggedUserJSON);
             setUser(user);
             noteService.setToken(user.token);
@@ -126,13 +126,13 @@ const App = (props) => {
 
             {user === null
                 ?
-                <LoginForm 
-                handleLogin={handleLogin}
-                username={username}
-                handleUsernameChange={({target}) => setUsername(target.username)}
-                password={password}
-                handlePasswordChange = {({target}) => setPassword(target.password)}
-                    />
+                <LoginForm
+                    handleLogin={handleLogin}
+                    username={username}
+                    handleUsernameChange={({ target }) => setUsername(target.username)}
+                    password={password}
+                    handlePasswordChange={({ target }) => setPassword(target.password)}
+                />
                 :
                 <NoteForm />
             }
