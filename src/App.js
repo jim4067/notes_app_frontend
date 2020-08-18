@@ -126,7 +126,13 @@ const App = (props) => {
 
             {user === null
                 ?
-                <LoginForm />
+                <LoginForm 
+                handleLogin={handleLogin}
+                username={username}
+                handleUsernameChange={({target}) => setUsername(target.username)}
+                password={password}
+                handlePasswordChange = {({target}) => setPassword(target.password)}
+                    />
                 :
                 <NoteForm />
             }
