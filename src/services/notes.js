@@ -7,8 +7,10 @@ const setToken = newToken => {
     token = `bearer ${newToken}`;
 }
 
-const getAll = () => {
-    return axios.get(baseUrl);
+const getAll = async () => {
+    const response = await axios.get(baseUrl);
+
+    return response.data;
 }
 
 const create = async (newObject) => {
