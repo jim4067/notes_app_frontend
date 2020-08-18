@@ -33,3 +33,6 @@ const NoteForm = ({ createNote }) => {
 }
 
 export default NoteForm;
+
+//only one prop is left createNote. 
+//it is called when the form creates a new note
