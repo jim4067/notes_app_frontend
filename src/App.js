@@ -16,6 +16,13 @@ const App = (props) => {
     const [password, setPassword] = useState("");
     const [user, setUser] = useState(null);
 
+    const noteFormRef = useRef();
+
+    const noteForm = () => {
+        <Togglable buttonLabel="new note" ref={noteFormRef}>
+            <NoteForm createNote={addNote} />
+        </Togglable>
+    }
     useEffect(() => {
         noteService
             .getAll()
