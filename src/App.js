@@ -118,14 +118,11 @@ const App = (props) => {
         );
     }
 
-    return (
-        <div>
-            <h1>Notes</h1>
+    if (user === null) {
+        return (
+            <div>
+                <Notification message={errorMessage} />
 
-            <Notification message={errorMessage} />
-
-            {user === null
-                ?
                 <LoginForm
                     handleLogin={handleLogin}
                     username={username}
@@ -133,28 +130,38 @@ const App = (props) => {
                     password={password}
                     handlePasswordChange={({ target }) => setPassword(target.password)}
                 />
-                :
-                <NoteForm />
-            }
-
-            <div>
-                <button onClick={() => setShowAll(!showAll)}>
-                    show{showAll ? "important" : "all"}
-                </button>
             </div>
+        );
+    }
 
-            <ul>
-                {notesToShow.map((note, i) =>
-                    <Note key={i}
-                        note={note}
-                        toggleImportance={() => toggleImportanceOf(note.id)}
-                    />
-                )}
-            </ul>
+    else {
+        return (
+            <div>
+                <h1>Notes</h1>
 
-            <Footer />
-        </div>
-    );
+                <Notification message={errorMessage} />
+
+                <NoteForm />
+
+                <div>
+                    <button onClick={() => setShowAll(!showAll)}>
+                        show{showAll ? "important" : "all"}
+                    </button>
+                </div>
+
+                <ul>
+                    {notesToShow.map((note, i) =>
+                        <Note key={i}
+                            note={note}
+                            toggleImportance={() => toggleImportanceOf(note.id)}
+                        />
+                    )}
+                </ul>
+
+                <Footer />
+            </div>
+        );
+    }
 };
 
 export default App;
