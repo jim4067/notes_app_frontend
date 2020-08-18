@@ -10,7 +10,6 @@ import noteService from './services/notes';
 
 const App = (props) => {
     const [notes, setNotes] = useState([]);
-    const [newNote, setNewNote] = useState("");
     const [showAll, setShowAll] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
     const [username, setUsername] = useState("");
@@ -59,12 +58,6 @@ const App = (props) => {
                 setNewNote("");
             })
         */
-    };
-
-
-    const handleNoteChange = (event) => {
-        console.log(event.target.value);
-        setNewNote(event.target.value);
     };
 
     const toggleImportanceOf = id => {
@@ -133,7 +126,7 @@ const App = (props) => {
                 <Notification message={errorMessage} />
 
                 <Togglable buttonLabel="a new note">
-                    <NoteForm addNote={addNote} newNote={newNote} handleNoteChange={handleNoteChange} />
+                    <NoteForm createNote={addNote} />
                 </Togglable>
 
                 <div>
