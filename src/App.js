@@ -118,28 +118,26 @@ const App = (props) => {
         );
     }
 
-    const loginForm = () => {
-        const hideWhenVisible = { display: loginVisible ? "none" : "" }
-        const showWhenVisible = { display: loginVisible ? "" : "none" }
-    }
+    const hideWhenVisible = { display: loginVisible ? "none" : "" }
+    const showWhenVisible = { display: loginVisible ? "" : "none" }
 
     if (user === null) {
         return (
             <div>
                 <Notification message={errorMessage} />
 
-                <div className='hideWhenVisible' >
-                    <button onClick={ () => setLoginVisble(true)} >log in</button>
+                <div style={hideWhenVisible} >
+                    <button onClick={() => setLoginVisble(true)} >log in</button>
                 </div>
 
-                <div className='showWhenVisible'>
-                <LoginForm
-                    handleLogin={handleLogin}
-                    username={username}
-                    handleUsernameChange={({ target }) => setUsername(target.value)}
-                    password={password}
-                    handlePasswordChange={({ target }) => setPassword(target.value)}
-                />
+                <div style={showWhenVisible}>
+                    <LoginForm
+                        handleLogin={handleLogin}
+                        username={username}
+                        handleUsernameChange={({ target }) => setUsername(target.value)}
+                        password={password}
+                        handlePasswordChange={({ target }) => setPassword(target.value)}
+                    />
                 </div>
                 <button onClick={() => setLoginVisble(false)}>cancel</button>
             </div>
