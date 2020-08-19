@@ -18,7 +18,7 @@ const App = (props) => {
 
     const noteFormRef = useRef();
 
-    const noteForm = () => {
+    const NoteFormRef = () => {
 
         return (
             <Togglable buttonLabel="new note" ref={noteFormRef}>
@@ -49,7 +49,7 @@ const App = (props) => {
         : notes.filter(note => note.important === true)
 
     const addNote = async (noteObject) => {
-        noteFormRef.current.toggleVisibility();
+        await noteFormRef.current.toggleVisibility();
 
         const response = await noteService.create(noteObject);
         console.log("the response data in addNote is", response)
@@ -129,9 +129,7 @@ const App = (props) => {
 
                 <Notification message={errorMessage} />
 
-                <Togglable buttonLabel="a new note">
-                    <NoteForm createNote={addNote} />
-                </Togglable>
+                <NoteFormRef />
 
                 <div>
                     <button onClick={() => setShowAll(!showAll)}>
