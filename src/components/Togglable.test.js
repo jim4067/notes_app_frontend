@@ -38,9 +38,14 @@ describe("<Togglable />", () => {
         const button = component.container.querySelector('button');
         fireEvent.click(button);
 
+        /*
+        it is advised to not use the method below and insted find buttons by text
         const closeButton = component.container.querySelector(
             'button:nth-child(2)'
         )
+        */
+
+        const closeButton = component.container.getByText("cancel");
         fireEvent.click(closeButton);
 
         const div = component.container.querySelector('.togglableComponent');
