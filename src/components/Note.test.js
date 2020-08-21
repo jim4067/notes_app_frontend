@@ -13,6 +13,9 @@ test("renders content", () => {
         <Note note={note} />
     );
 
+    component.debug();
+
+    /*
     //the different ways of investigating the contetns of the components being investigated
     //method 1
     expect(component.container).toHaveTextContent(
@@ -30,4 +33,5 @@ test("renders content", () => {
     expect(div).toHaveTextContent(
         "Component testing is done with react-tesing-library"
     );
+    */
 });
