@@ -25,4 +25,12 @@ describe("<Togglable />", () => {
 
         expect(div).toHaveStyle('display : none');
     });
+
+    test("after clicking the button, children are displayed", () => {
+        const button = component.getByText('show...');
+        fireEvent.click(button);
+
+        const div = component.container.querySelector('.togglableComponent');
+        expect(div).not.toHaveStyle('display : none');
+    });
 });
