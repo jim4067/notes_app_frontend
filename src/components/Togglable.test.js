@@ -45,7 +45,7 @@ describe("<Togglable />", () => {
         )
         */
 
-        const closeButton = component.container.getByText("cancel");
+        const closeButton = component.getByText("cancel");
         fireEvent.click(closeButton);
 
         const div = component.container.querySelector('.togglableComponent');
