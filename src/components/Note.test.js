@@ -14,6 +14,7 @@ test("renders content", () => {
         <Note note={note} />
     );
 
+    //searching for the li element
     const li = component.container.querySelector('li');
 
     console.log(prettyDOM(li));
@@ -54,5 +55,5 @@ test("clicking the button calls the event handler once" , () => {
     const button = component.getByText("make not important");
     fireEvent.click(button);
 
-    expect(mockHandler.mock.call).toHaveLength(1);
+    expect(mockHandler.mock.calls).toHaveLength(1);
 });
