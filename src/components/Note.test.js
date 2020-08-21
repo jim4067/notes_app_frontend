@@ -21,6 +21,10 @@ test("renders content", () => {
     const element = component.getByText(
         "Component testing is done with react-tesing-library"
     );
-
     expect(element).toBeDefined();
+
+    const div = component.container.querySelector('.note');
+    expect(div).toHaveTextContent(
+        "Component testing is done with react-tesing-library"
+    );
 });
