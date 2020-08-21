@@ -14,7 +14,9 @@ test("renders content", () => {
         <Note note={note} />
     );
 
-    component.debug();
+    const li = component.container.querySelector('li');
+
+    console.log(prettyDOM(li));
 
     /*
     //the different ways of investigating the contetns of the components being investigated
