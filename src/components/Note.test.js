@@ -38,3 +38,21 @@ test("renders content", () => {
     );
     */
 });
+
+test("clicking the button calls the event handler once" , () => {
+    const note = {
+        content : "component testing is done with react-tesing-library",
+        important : true
+    }
+
+    const mockHandler = jest.fn();
+
+    const component = render(
+        <Note note={note} toggleImportance={mockHandler} />
+    );
+
+    const button = component.getByText("make not important");
+    fireEvent.click(button);
+
+    expect(mockHandler.mock.call).toHaveCalls(1);
+});
