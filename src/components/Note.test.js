@@ -13,7 +13,14 @@ test("renders content", () => {
         <Note note={note} />
     );
 
+    //the different ways of investigating the contetns of the components being investigated
     expect(component.container).toHaveTextContent(
         "Component testing is done with react-tesing-library"
     );
+
+    const element = component.getByText(
+        "Component testing is done with react-tesing-library"
+    );
+
+    expect(element).toBeDefined();
 });
