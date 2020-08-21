@@ -55,7 +55,7 @@ const App = (props) => {
         console.log("the response data in addNote is", response)
         setNotes(notes.concat(response));
 
-        /* 
+        /*
         noteService
             .create(noteObject)
             .then(response => {
@@ -76,7 +76,8 @@ const App = (props) => {
             .catch(err => {
                 setErrorMessage(` ${note.content} was already removed from the server`);
                 setTimeout(() => setErrorMessage(null), 5000);
-                setNotes(notes.filter(n => n.id !== id))
+                setNotes(notes.filter(n => n.id !== id));
+                console.log("the error in toggle importance of", err);
             })
     }
 
