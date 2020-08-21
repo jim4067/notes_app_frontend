@@ -14,15 +14,18 @@ test("renders content", () => {
     );
 
     //the different ways of investigating the contetns of the components being investigated
+    //method 1
     expect(component.container).toHaveTextContent(
         "Component testing is done with react-tesing-library"
     );
 
+    //method 2
     const element = component.getByText(
         "Component testing is done with react-tesing-library"
     );
     expect(element).toBeDefined();
 
+    //method 3
     const div = component.container.querySelector('.note');
     expect(div).toHaveTextContent(
         "Component testing is done with react-tesing-library"
