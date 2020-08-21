@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import Togglable from './Togglable';
 
-describe("<Togglable />" , () => {
+describe("<Togglable />", () => {
     let component;
 
     beforeEach(() => {
@@ -12,5 +12,11 @@ describe("<Togglable />" , () => {
                 <div className='testDiv' />
             </Togglable>
         );
+    });
+
+    test("renders its children", () => {
+        expect(
+            component.container.querySelector('testDiv')
+        ).toBeDefined();
     });
 });
