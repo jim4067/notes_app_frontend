@@ -13,7 +13,7 @@ test("renders content", () => {
         <Note note={note} />
     );
 
-    expect(component.container).toHaveContent(
+    expect(component.container).toHaveTextContent(
         "Component testing is done with react-tesing-library"
     );
 });
