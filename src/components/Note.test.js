@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import {prettyDOM} from '@testing-library/dom';
+import { prettyDOM } from '@testing-library/dom';
 import Note from './Note';
 
 test("renders content", () => {
