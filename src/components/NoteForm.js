@@ -20,7 +20,7 @@ const NoteForm = ({ createNote }) => {
     }
 
     return (
-        <div>
+        <div className='formDiv'>
             <form onSubmit={addNote}>
                 <input
                     value={newNote}
@@ -34,5 +34,5 @@ const NoteForm = ({ createNote }) => {
 
 export default NoteForm;
 
-//only one prop is left createNote. 
+//only one prop is left createNote.
 //it is called when the form creates a new note
