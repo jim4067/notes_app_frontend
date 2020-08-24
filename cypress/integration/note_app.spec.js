@@ -5,12 +5,15 @@ describe('Note app', function() {
 
     it("front page can be opnened", function() {
         window.cy.contains("login");
-        //cy.contains("Note app, Department of Physical Sciences, University of Nairobi 2020");
     });
 
-    it("login form can be opnened", function() {
+    it("login form can be opnened and user log in", function() {
         window.cy.contains('login').click();
-        window.cy.get('input:first').type("jim4067");
-        window.cy.get('input:last').type("pass123");
+        window.cy.get('#username').type("jim4067");
+        window.cy.get('#password').type("pass123");
+        window.cy.get('#login-button').click();
+
+        window.cy.contains('Notes');
+        window.cy.contains('Note app, Department of Physical Sciences, University of Nairobi 2020');
     })
 });
