@@ -10,5 +10,7 @@ describe('Note app', function() {
 
     it("login form can be opnened", function() {
         window.cy.contains('login').click();
+        window.cy.get('input:first').type("jim4067");
+        window.cy.get('input:last').type("pass123");
     })
 });
