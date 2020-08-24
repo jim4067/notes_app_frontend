@@ -13,7 +13,6 @@ describe('Note app', function() {
         window.cy.get('#password').type("pass123");
         window.cy.get('#login-button').click();
 
-        window.cy.contains('Notes');
         window.cy.contains('Note app, Department of Physical Sciences, University of Nairobi 2020');
     })
 });
