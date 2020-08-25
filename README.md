@@ -15,7 +15,7 @@ It is from the [fullstackopen] course that is offered by the univesity of Helsin
 - The unit tests are performed using JEST (yay! Facebook) while end to end testing using Cypress.
 - There are also dependancies that deserve honourable mentions.
 
-  - [axios] for making requests and receiving responses to and from the backend.
+  - [axios] as the HTTP client for making requests and receiving responses to and from the backend.
   - [jsonwebserver] in the beginning the code had no server so the code downloaded this dev dep and used it as the server.
   - [prop-types] to make sure that the tyep of a component's prop is defined and is of the correct type.
 
@@ -37,15 +37,15 @@ It is from the [fullstackopen] course that is offered by the univesity of Helsin
                     [npm] start
 
 This is the end but thanks for taking the time to read. 
-The url to the web app is at [notes app site]
+The url to the web app is at [notes app link]
 
 <br />
 <br />
 
 
 [fullstackopen]: https://fullstackopen.com
-[axios]: https://
-[jsonwebserver]: https://
-[prop-types]: https://
+[axios]: https://github.com/axios/axios
+[jsonwebserver]: https://github.com/typicode/json-server
+[prop-types]: https://github.com/facebook/prop-types
 [notes_app]: https://github.com/jim4067/notes_app
-[notes app site]: https://nameless-mountain-32216.herokuapp.com/
+[notes app link]: https://nameless-mountain-32216.herokuapp.com/
