@@ -4,7 +4,7 @@ Hi there and welcome!
 
 This is the front end of the note taking app.
 
-It is from the fullstackopen course that is offered by the univesity of Helsinki.
+It is from the [fullstackopen] course that is offered by the univesity of Helsinki.
 
 <br />
 
@@ -41,6 +41,8 @@ This is the end but thanks for taking the time to read. The url to the web app i
 <br />
 <br />
 
+
+[fullstackopen]: https://fullstackopen.com
 [axios]: https://
 [jsonwebserver]: https://
 [prop-types]: https://
