@@ -36,7 +36,8 @@ It is from the [fullstackopen] course that is offered by the univesity of Helsin
                     [npm] i
                     [npm] start
 
-This is the end but thanks for taking the time to read. The url to the web app is at [notes app frontend]
+This is the end but thanks for taking the time to read. 
+The url to the web app is at [notes app site]
 
 <br />
 <br />
@@ -47,4 +48,4 @@ This is the end but thanks for taking the time to read. The url to the web app i
 [jsonwebserver]: https://
 [prop-types]: https://
 [notes_app]: https://github.com/jim4067/notes_app
-[notes app frontend]: https://
+[notes app site]: https://nameless-mountain-32216.herokuapp.com/
