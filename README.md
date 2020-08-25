@@ -16,8 +16,8 @@ It is from the [fullstackopen] course that is offered by the univesity of Helsin
 - There are also dependancies that deserve honourable mentions.
 
   - [axios] as the HTTP client for making requests and receiving responses to and from the backend.
-  - [jsonwebserver] in the beginning the code had no server so the code downloaded this dev dep and used it as the server.
-  - [prop-types] to make sure that the tyep of a component's prop is defined and is of the correct type.
+  - [jsonwebserver] in the beginning the front end had no server so the code downloaded this dev dep and used it as the server.
+  - [prop-types] to make sure that the type of a component's prop is defined and is of the correct type.
 
 <br />
 
