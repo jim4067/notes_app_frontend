@@ -27,4 +27,20 @@ It is from the fullstackopen course that is offered by the univesity of Helsinki
 
 - Make sure you have node and git installed and are familiar with how it works.
 - clone this repository.  
-     * [git] clone https://github.com/jim4067/notes_app_frontend.git
+- change directory into the notes app directory.
+- Install all the required node modules. Dependacies and what not.
+- Start the front end using the npm script. Make sure also that you have the [notes_app] back end server running too.  
+ git clone https://github.com/jim4067/notes_app_frontend.git
+ cd notes_app_front_end
+ npm i
+ npm start
+
+
+
+
+
+
+<br />
+<br />
+
+[notes_app]: https://github.com/jim4067/notes_app
