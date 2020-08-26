@@ -21,13 +21,32 @@
 }
 #togglable-show-button:hover {
   /* animation: show 0.7s 1; */
-  color : white;
+  color: white;
   background-color: #3498db;
   cursor: pointer;
   transform: scale(1.1);
 }
 
-
+#togglable-cancel-button {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px -5px #00000070;
+  color: #3498db;
+  font-size: large;
+  height: 40px;
+  justify-content: center;
+  margin-top: 60vh;
+  text-align: center;
+  transition: 0.2s linear;
+  width: 200px;
+}
+#togglable-cancel-button:hover {
+  color: white;
+  background-color:red;
+  cursor: pointer;
+  transform: scale(1.1);
+}
 /* do not forget to add the styles for the concel button */
 
 @keyframes show {
@@ -36,6 +55,6 @@
   }
   100% {
     background-color: #3498db;
-    color : white;
+    color: white;
   }
 }
