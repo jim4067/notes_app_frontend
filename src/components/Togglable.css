@@ -1,10 +1,20 @@
+*{
+    font-family: Alata;
+}
 .togglable-container {
-    display :flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s linear;
 }
 #default-shown-button {
-  height: 28px;
-  margin-top : 50px;
-  text-align : center;
-  width: 100px;
+  background-color: #f1f1f1;
+  border : none;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px -5px #00000070;
+  color : #3498db;
+  font-size: large;
+  height: 40px;
+  margin-top: 100px;
+  text-align: center;
+  width: 200px;
 }
