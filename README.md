@@ -23,7 +23,7 @@ It is from the [fullstackopen] course that is offered by the Univesity of Helsin
 
 ## Running the application locally
 
-- I do not oftenly push this code to the the heroku master and deploy it to the internet so here are the instructions for running the app locally.
+I do not oftenly push this code to the the heroku master and deploy it to the internet so here are the instructions for running the app locally.
 
 - Make sure you have node and git installed and are familiar with how it works.
 - clone this repository.
