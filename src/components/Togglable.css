@@ -20,7 +20,9 @@
   width: 200px;
 }
 #default-shown-button:hover {
-  animation: show 0.7s 1;
+  /* animation: show 0.7s 1; */
+  color : white;
+  background-color: #3498db;
   cursor: pointer;
   transform: scale(1.1);
 }
