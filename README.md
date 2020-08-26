@@ -25,7 +25,7 @@ It is from the [fullstackopen] course that is offered by the Univesity of Helsin
 
 I do not oftenly push this code to the the heroku master and deploy it to the internet so here are the instructions for running the app locally.
 
-- Make sure you have node and git installed and are familiar with how it works.
+- Make sure you have node and git installed and are familiar with the basics of how both work.
 - clone this repository.
 - change directory into the notes app directory.
 - Install all the required node modules. Dependacies and what not.
