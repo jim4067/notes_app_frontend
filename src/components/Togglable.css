@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
 }
-#default-shown-button {
+#togglable-show-button {
   background-color: #f1f1f1;
   border: none;
   border-radius: 6px;
@@ -19,13 +19,16 @@
   transition: 0.2s linear;
   width: 200px;
 }
-#default-shown-button:hover {
+#togglable-show-button:hover {
   /* animation: show 0.7s 1; */
   color : white;
   background-color: #3498db;
   cursor: pointer;
   transform: scale(1.1);
 }
+
+
+/* do not forget to add the styles for the concel button */
 
 @keyframes show {
   0% {
