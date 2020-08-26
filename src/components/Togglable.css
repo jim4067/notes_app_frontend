@@ -1,0 +1,10 @@
+.togglable-container {
+    display :flex;
+    justify-content: center;
+}
+#default-shown-button {
+  height: 28px;
+  margin-top : 50px;
+  text-align : center;
+  width: 100px;
+}
