@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import './LoginForm.css';
 
 const LoginForm = ({ handleLogin, username, handleUsernameChange, password, handlePasswordChange, }) => {
 
