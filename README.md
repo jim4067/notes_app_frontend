@@ -31,10 +31,10 @@ I do not oftenly push this code to the the heroku master and deploy it to the in
 - Install all the required node modules. Dependacies and what not.
 - Start the front end using the npm script. Make sure also that you have the [notes_app] back end server running too.
 
-                    [git] clone https://github.com/jim4067/notes_app_frontend.git
-                    [cd] notes_app_front_end
-                    [npm] i
-                    [npm] start
+                    git clone https://github.com/jim4067/notes_app_frontend.git
+                    cd notes_app_front_end
+                    npm i
+                    npm start
 
 This is the end but thanks for taking the time to read. 
 The url to the web app is at [notes app link]
