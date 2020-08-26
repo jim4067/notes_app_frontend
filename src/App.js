@@ -7,6 +7,7 @@ import Togglable from './components/Togglable';
 import Footer from './components/Footer';
 import loginService from './services/login';
 import noteService from './services/notes';
+import './App.css';
 
 const App = (props) => {
     const [notes, setNotes] = useState([]);
