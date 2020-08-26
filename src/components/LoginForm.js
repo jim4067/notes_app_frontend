@@ -5,6 +5,7 @@ import './LoginForm.css';
 const LoginForm = ({ handleLogin, username, handleUsernameChange, password, handlePasswordChange, }) => {
 
     return (
+        <div className='login-form-container'>
         <form onSubmit={handleLogin} >
             <div>
                 username <input
@@ -24,7 +25,7 @@ const LoginForm = ({ handleLogin, username, handleUsernameChange, password, hand
             </div>
             <button id='login-button' type='submit'>login</button>
         </form>
-
+        </div>
     );
 }
 
