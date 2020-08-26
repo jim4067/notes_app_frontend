@@ -4,7 +4,7 @@ Hi there and welcome!
 
 This is the front end of the note taking app. Allows the user to create, edit and delete notes.
 
-It is from the [fullstackopen] course that is offered by the univesity of Helsinki.
+It is from the [fullstackopen] course that is offered by the Univesity of Helsinki.
 
 <br />
 
