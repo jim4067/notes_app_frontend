@@ -1,16 +1,16 @@
-describe('Note app', function() {
+describe('Note app', function () {
     beforeEach(function () {
         cy.request('POST', 'http://localhost:3040/api/testing/reset');
         const user = {
             name: "James Mutuku",
-            username : "jim4067",
-            password : "pass123"
+            username: "jim4067",
+            password: "pass123"
         }
         cy.request('POST', 'http://localhost:3040/api/users', user);
         cy.visit('http://localhost:3000');
     });
 
-    it("front page can be opnened", function() {
+    it("front page can be opnened", function () {
         cy.contains("login");
     });
 
@@ -27,16 +27,36 @@ describe('Note app', function() {
     });
     */
 
-    it("a new note can be added", function() {
-        cy.contains('login').click();
-        cy.get('#username').type("jim4067");
-        cy.get('#password').type("pass123");
-        cy.get('#login-button').click();
+    describe("and a note will be added and modified", function () {
+        beforeEach(function () {
+            cy.contains('login').click();
+            cy.get('#username').type("jim4067");
+            cy.get('#password').type("pass123");
+            cy.get('#login-button').click();
+        });
 
-        cy.contains('new note').click();
-        cy.get('input').type("a note created by cypress");
-        cy.contains('save').click();
-        cy.contains("a note created by cypress");
+        it("a new note can be added and its importance changed", function () {
+            cy.contains('new note').click();
+            cy.get('input').type("created by cypress");
+            cy.contains('save').click();
+            cy.contains("created by cypress")
+                .contains('make important')
+                .click();
+
+            cy.contains("created by cypress")
+                .contains('make not important')
+        });
+
+        /*slow net. test timeout before this is tested
+        it("and its importance can be changed", function () {
+            cy.contains('created by cypress')
+                .contains('make important')
+                .click();
+
+            cy.contains("created by cypress")
+                .contains('make not important');
+        });
+        */
     });
 });
 

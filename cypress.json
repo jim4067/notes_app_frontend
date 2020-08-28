@@ -1,4 +1,4 @@
 {
-    "requestTimeout" : 50000,
+    "requestTimeout" : 5000000,
     "responseTimeout" : 300000000
 }
