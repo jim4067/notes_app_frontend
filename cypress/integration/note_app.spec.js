@@ -14,6 +14,9 @@ describe('Note app', function() {
         cy.contains("login");
     });
 
+    /*
+     *repeated in the test below 
+     
     it("login form can be opnened and user log in", function() {
         cy.contains('login').click();
         cy.get('#username').type("jim4067");
@@ -22,6 +25,7 @@ describe('Note app', function() {
 
         cy.contains('Note app');
     });
+    */
 
     it("a new note can be added", function() {
         cy.contains('login').click();
