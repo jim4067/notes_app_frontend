@@ -27,31 +27,31 @@ describe('Note app', function () {
 
         beforeEach(function () {
             cy.login({ username: "jim4067", password: "pass123" })
-
-            it.only("a new note can be added and its importance changed", function () {
-                cy.contains('new note').click();
-                cy.get('input').type("created by cypress");
-                cy.contains('save').click();
-                cy.contains("created by cypress")
-                    .contains('make important')
-                    .click();
-
-                cy.contains("created by cypress")
-                    .contains('make not important')
-            });
-
-            /*slow net. test timeout before this is tested
-            it("and its importance can be changed", function () {
-                cy.contains('created by cypress')
-                    .contains('make important')
-                    .click();
-    
-                cy.contains("created by cypress")
-                    .contains('make not important');
-            });
-            */
         });
 
+        it.only("a new note can be added and its importance changed", function () {
+            cy.contains('new note').click();
+            cy.get('input').type("created by cypress", {force : true});
+            cy.contains('save').click();
+            cy.contains("created by cypress")
+                .contains('make important')
+                .click();
+
+            cy.contains("created by cypress")
+                .contains('make not important')
+        });
+
+        /*slow net. test timeout before this is tested
+        it("and its importance can be changed", function () {
+            cy.contains('created by cypress')
+                .contains('make important')
+                .click();
+ 
+            cy.contains("created by cypress")
+                .contains('make not important');
+        });
+        */
+        
         describe("password failure ", function () {
             //Testing only one test using .only 
             it("login fails with wrong password", function () {
