@@ -29,9 +29,9 @@ describe('Note app', function () {
             cy.login({ username: "jim4067", password: "pass123" })
         });
 
-        it.only("a new note can be added and its importance changed", function () {
+        it("a new note can be added and its importance changed", function () {
             cy.contains('new note').click();
-            cy.get('input').type("created by cypress", {force : true});
+            cy.get('input').type("created by cypress", { force: true });
             cy.contains('save').click();
             cy.contains("created by cypress")
                 .contains('make important')
@@ -41,6 +41,16 @@ describe('Note app', function () {
                 .contains('make not important')
         });
 
+
+        describe("and a note exits", function () {
+            beforeEach(function () {
+                cy.createNote({
+                    content: "created from a custom command",
+                    important: true
+                });
+            });
+        });
+    
         /*slow net. test timeout before this is tested
         it("and its importance can be changed", function () {
             cy.contains('created by cypress')
@@ -50,8 +60,8 @@ describe('Note app', function () {
             cy.contains("created by cypress")
                 .contains('make not important');
         });
-        */
         
+
         describe("password failure ", function () {
             //Testing only one test using .only 
             it("login fails with wrong password", function () {
@@ -68,7 +78,11 @@ describe('Note app', function () {
                 cy.get('html').should('not.contain', "James Mutuku logged in");
             });
         });
+        */
 
     });
+
+    
+
 });
 //don't forget to add the cypress plugin
