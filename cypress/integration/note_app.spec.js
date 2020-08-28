@@ -67,6 +67,8 @@ describe('Note app', function () {
             cy.get('#login-button').click();
 
             cy.get('.error').should('contain', "wrong credentials");
+            cy.get('.error').should('have.css', 'color' , 'rgb(255, 0, 0)');
+            cy.get('.error').should('have.css', 'border-style','solid' );
         });
     });
 });
