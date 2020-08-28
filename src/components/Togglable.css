@@ -27,6 +27,7 @@
   transform: scale(1.1);
 }
 
+/* if this braks the NoteForm remove it*/
 #togglable-cancel-button {
   background-color: #f1f1f1;
   border: none;
@@ -36,7 +37,7 @@
   font-size: large;
   height: 40px;
   justify-content: center;
-  margin-top: 60vh;
+  margin-top: 40vh;
   text-align: center;
   transition: 0.2s linear;
   width: 200px;
