@@ -1,12 +1,12 @@
 describe('Note app', function() {
     beforeEach(function () {
-        cy.request('POST', 'http://localhost:3000/api/testing/rest');
+        cy.request('POST', 'http://localhost:3040/api/testing/reset');
         const user = {
             name: "James Mutuku",
             username : "jim4067",
             password : "pass123"
         }
-        cy.request('POST', 'http://localhost:3000/api/users', user);
+        cy.request('POST', 'http://localhost:3040/api/users', user);
         cy.visit('http://localhost:3000');
     });
 
@@ -20,7 +20,7 @@ describe('Note app', function() {
         cy.get('#password').type("pass123");
         cy.get('#login-button').click();
 
-        cy.contains('Note app, Department of Physical Sciences, University of Nairobi 2020');
+        cy.contains('Note app');
     });
 
     it("a new note can be added", function() {
