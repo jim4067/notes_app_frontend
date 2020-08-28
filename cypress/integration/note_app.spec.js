@@ -70,5 +70,5 @@ describe('Note app', function () {
         });
 
     });
-
+});
 //don't forget to add the cypress plugin
