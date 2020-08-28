@@ -10,10 +10,6 @@ describe('Note app', function () {
         cy.visit('http://localhost:3000');
     });
 
-    it("front page can be opnened", function () {
-        cy.contains("login");
-    });
-
     /*
      *repeated in the test below 
      
@@ -27,8 +23,8 @@ describe('Note app', function () {
     });
     */
 
-    describe("and a note will be added and modified", function () {
-        /*
+    describe("when logged in ", function () {
+
         beforeEach(function () {
             cy.contains('login').click();
             cy.get('#username').type("jim4067");
@@ -58,8 +54,10 @@ describe('Note app', function () {
                 .contains('make not important');
         });
         */
+    });
 
-        //Testing only one test using .only supposedly. This caused the tests to fail so commented out the above tests
+    describe("password failure ", function () {
+        //Testing only one test using .only 
         it.only("login fails with wrong password", function () {
             cy.contains("login").click();
             cy.get('#username').type("jim47");
@@ -70,10 +68,11 @@ describe('Note app', function () {
                 .should('contain', "wrong credentials")
                 .and('have.css', 'color', 'rgb(255, 0, 0)')
                 .and('have.css', 'border-style', 'solid')
-       
+
             cy.get('html').should('not.contain', "James Mutuku logged in");
         });
     });
+
 });
 
 //don't forget to add the cypress plugin
