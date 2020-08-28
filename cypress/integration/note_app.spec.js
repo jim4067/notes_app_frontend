@@ -66,7 +66,7 @@ describe('Note app', function () {
             cy.get('#password').type("this is wrong");
             cy.get('#login-button').click();
 
-            cy.contains("wrong credentials");
+            cy.get('.error').contains("wrong credentials");
         });
     });
 });
