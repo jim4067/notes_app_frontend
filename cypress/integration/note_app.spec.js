@@ -26,13 +26,19 @@ describe('Note app', function () {
     describe("when logged in ", function () {
 
         beforeEach(function () {
-            cy.contains('login').click();
-            cy.get('#username').type("jim4067");
-            cy.get('#password').type("pass123");
-            cy.get('#login-button').click();
+            const user_to_login = {
+                username : "jim4067",
+                password : "pass123"
+            }
+
+            cy.request('POST', 'http://localhost:3040/api/login', user_to_login)
+              .then(function (response){
+                  localStorage.setItem('loggedNoteAppUser', JSON.stringify(response.body))
+                  cy.visit('http://localhost:3000')
+              })
         });
 
-        it("a new note can be added and its importance changed", function () {
+        it.only("a new note can be added and its importance changed", function () {
             cy.contains('new note').click();
             cy.get('input').type("created by cypress");
             cy.contains('save').click();
@@ -58,7 +64,7 @@ describe('Note app', function () {
 
     describe("password failure ", function () {
         //Testing only one test using .only 
-        it.only("login fails with wrong password", function () {
+        it("login fails with wrong password", function () {
             cy.contains("login").click();
             cy.get('#username').type("jim47");
             cy.get('#password').type("this is wrong");
