@@ -50,6 +50,24 @@ describe('Note app', function () {
                 });
             });
         });
+
+        describe("and several functions exist" , function (){
+            beforeEach(function () {
+                cy.createNote({content: "the first note", important : true});
+                cy.createNote({content: "the second note", important: false});
+                cy.createNote({content: "the third note", imprtant: false});
+            });
+
+            it.only("one of those can be made importnat", function (){
+                cy.contains('the second note')
+                  .contains('make important')
+                  .click();
+
+                cy.contains("the second note")
+                   .contains("make not important");  
+            });
+
+        });
     
         /*slow net. test timeout before this is tested
         it("and its importance can be changed", function () {
