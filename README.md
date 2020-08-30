@@ -10,17 +10,22 @@ It is from the [fullstackopen] course that is offered by the Univesity of Helsin
 
 ## Technologies used in building the app
 
-- The app (at least the front end) is built entirely using react. React offers the ability to code components that manage their
- own state and later combine them to design the complete user interface.
-- The linter used for code consistency is eslint.(God this was a pain in the ass when your not consistent with your coding style). It
-made it easier to find bugs caused by typo's instead of spending the whole day searching for the missing curly bracket.
-- The unit tests are performed using JEST (yay! Facebook). As the landing page suggests the it is a delightful testing framework with a focus on simplicity.
-- End to end testing was performed using Cypress. It is much more bearable to get it running compared to other e2e testing frameworks.
-- There are also dependancies that deserve honourable mentions.
+The app (at least the front end) is built entirely using react. React offers the ability to code components that manage their
+own state and later combine them to design the complete user interface.
 
-  - [axios] as the HTTP client for making requests and receiving responses to and from the backend, because it is much more intuitive to use compared to the default fetch.
-  - [jsonwebserver] in the beginning the front end had no server, this development dependacy acted as a simple JSON server.
-  - [prop-types] to make sure that the type of a component's prop is defined and is of the correct type. Made sure that none of the props were left unnamed.
+The linter used for code consistency is eslint.(God this was a pain in the ass when your not consistent with your coding style). It
+made it easier to find bugs caused by typo's instead of spending the whole day searching for the missing curly bracket.
+
+The unit tests are performed using JEST (yay! Facebook). As the landing page suggests the it is a delightful testing framework with a focus on simplicity.
+
+End to end testing was performed using Cypress. It is much more bearable to get it running compared to other e2e testing frameworks.
+There are also dependancies that deserve honourable mentions.
+
+[axios] as the HTTP client for making requests and receiving responses to and from the backend, because it is much more intuitive to use compared to the default fetch.
+
+[jsonwebserver] in the beginning the front end had no server, this development dependacy acted as a simple JSON server.
+
+[prop-types] to make sure that the type of a component's prop is defined and is of the correct type. Made sure that none of the props were left unnamed.
 
 <br />
 
