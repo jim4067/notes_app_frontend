@@ -13,7 +13,7 @@ It is from the [fullstackopen] course that is offered by the Univesity of Helsin
 The front-end is built entirely using react. React offers the ability to code components that manage their
 own state and later combine them to design the complete user interface.
 
-The linter used for code consistency is eslint. It made it easier to find bugs caused by typo's instead of spending the whole day searching for the missing curly bracket.
+The linter used for code consistency is eslint . It made it easier to find bugs caused by typo's instead of spending the whole day searching for the missing curly bracket.
 
 The unit tests are performed using JEST. As the landing page suggests the it is a delightful testing framework with a focus on simplicity.
 
@@ -36,11 +36,12 @@ I do not oftenly push this code to the the heroku master and deploy it to the in
 - change directory into the notes app directory.
 - Install all the required node modules. Dependacies and what not.
 - Start the front end using the npm script. Make sure also that you have the [notes_app] back end server running too.
-
-                      git clone https://github.com/jim4067/notes_app_frontend.git
-                      cd notes_app_front_end
-                      npm i
-                      npm start
+```
+git clone https://github.com/jim4067/notes_app_frontend.git
+cd notes_app_front_end
+npm i
+npm start
+```
 
   <br />
 
